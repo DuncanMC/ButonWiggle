@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *jellybeanButton;
+@property (weak, nonatomic) IBOutlet UISwitch *wiggleSwitch;
+
+- (IBAction)handleWiggleSwitch:(UISwitch *)sender;
 
 @end
