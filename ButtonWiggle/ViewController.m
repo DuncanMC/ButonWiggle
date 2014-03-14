@@ -61,7 +61,7 @@
   
   [UIView animateWithDuration: duration
                         delay: 0
-   options:  UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction
+                      options:  UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
                    animations: ^
    {
      //Pick an amount to change the height & width of the iamge
@@ -97,7 +97,7 @@
      
      [UIView animateWithDuration: duration
                            delay: 0
-                         options:  UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction
+                         options:  UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
                       animations: ^
       {
         //Set the view's trnaform back to the identity transform.
