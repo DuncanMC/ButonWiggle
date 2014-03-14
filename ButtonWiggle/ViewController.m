@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+
+#define randomize 1
+
 @interface ViewController ()
 
 @end
@@ -52,12 +55,21 @@
 - (void) handleWiggle;
 {
   //Randomize the animation speed for each repeat
-  CGFloat random = [self randomFloat: .5];
+  CGFloat random = 0;
+#if randomize
+  random = [self randomFloat: .5];
+#endif
   _jellybeanButton.layer.speed = 1 + random;
   
   
   //randomize the duration of both steps slightly
-  CGFloat duration = .18 + [self randomFloatPlusOrMinus: .02];
+  CGFloat duration;
+#if randomize
+  duration = .18;
+#else
+  duration = .4;
+#endif
+  duration += [self randomFloatPlusOrMinus: .02];
   
   [UIView animateWithDuration: duration
                         delay: 0
@@ -65,14 +77,18 @@
                    animations: ^
    {
      //Pick an amount to change the height & width of the iamge
-     CGFloat delta= .05 + [self randomFloat: .05];
+     CGFloat delta = .1;
+#if randomize
+     delta= .05 + [self randomFloat: .05];
      if (arc4random_uniform(2) == 0)
        delta *= -1;
+#endif
      
      //Create a transform that scales the image
      CGAffineTransform transform = CGAffineTransformMakeScale(1 + delta, 1 -delta); //Make the image wider and shorter or narrower and taller.
      
      //-----
+#if randomize
      //Rotate it by a random amount around a slightly randomized center-point
      CGFloat x,y;
      x = .5 + [self randomFloatPlusOrMinus: 20];
@@ -86,13 +102,17 @@
      transform = CGAffineTransformTranslate(transform, x, y);
      transform = CGAffineTransformRotate(transform, rotation * M_2_PI);
      transform = CGAffineTransformTranslate(transform, -x, -y);
+#endif
      //-----
      _jellybeanButton.transform = transform;
    }
                    completion: ^(BOOL finished)
    //When the animation is done, animate the view back to normal
    {
-     CGFloat random = [self randomFloat: .5];
+     CGFloat random = 0;
+#if randomize
+     random = [self randomFloat: .5];
+#endif
      _jellybeanButton.layer.speed = 1 + random;
      
      [UIView animateWithDuration: duration
