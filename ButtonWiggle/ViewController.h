@@ -11,7 +11,9 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *jellybeanButton;
 @property (weak, nonatomic) IBOutlet UISwitch *wiggleSwitch;
+@property (weak, nonatomic) IBOutlet UIImageView *waretoIcon;
 
 - (IBAction)handleWiggleSwitch:(UISwitch *)sender;
+- (IBAction)handleJellybeanButton:(UIButton *)sender;
 
 @end

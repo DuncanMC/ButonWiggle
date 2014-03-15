@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 
-#define randomize 1
+#define randomize 0
 
 @interface ViewController ()
 
@@ -137,10 +137,90 @@
 }
 
 //-----------------------------------------------------------------------------------------------------------
+#pragma mark - IBAction methods
+//-----------------------------------------------------------------------------------------------------------
 
 - (IBAction)handleWiggleSwitch:(UISwitch *)sender
 {
   if (_wiggleSwitch.isOn)
     [self handleWiggle];
 }
+
+//-----------------------------------------------------------------------------------------------------------
+- (IBAction)handleJellybeanButton:(UIButton *)sender
+{
+#define full_rotation M_PI*2
+#define rotation_count 1
+  
+  
+  static float change =-full_rotation* rotation_count;
+  
+  change *= -1;  //Have our rotation alternate between clockwise and counter-clockwise.
+  
+  //Create a CABasicAnimation object to manage our rotation.
+  CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform"];
+  
+  //Make sure the begin time on the animation is 0,
+  //in case we left at a different value on the last animation.
+  
+  _jellybeanButton.enabled = NO;
+  rotation.duration =  1;
+  
+  rotation.fromValue = @(0);
+  
+  
+  //Set the ending value of the rotation to the new angle.
+  rotation.toValue = @(change);
+  
+  //Have the rotation use linear timing.
+  rotation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+  
+  /*
+   
+   This is the magic bit. We add a CAValueFunction that tells the CAAnimation we are modifying
+   the transform's rotation around the Z axis.
+   Without this, we would supply a transform as the fromValue and toValue, and for rotations
+   > a half-turn, we could not control the rotation direction.
+   
+   By using a value function, we can specify arbitrary rotation amounts and directions, and even
+   Rotations greater than 360 degrees.
+   */
+  
+  rotation.valueFunction = [CAValueFunction functionWithName: kCAValueFunctionRotateZ];
+  
+  //Make ourselves the animation's delegate, so we get called when it's finished.
+  rotation.delegate = self;
+  
+  
+  
+  /*
+   Attach the completion block to the animation using the key kAnimationCompletionBlock.
+   Our animationDidStop:finished: delegate method will execute this block when the animation completes.
+   
+   Unlike most objects, CAAnimation and CALayer objects allow you
+   to attach any arbitrary key/value pair to them.
+   */
+  
+  
+  /*
+   Set the layer's transform to it's final state before submitting the animation, so it is in it's
+   final state once the animation completes.
+   */
+  _waretoIcon.layer.transform = CATransform3DRotate(_waretoIcon.layer.transform, change, 0, 0, 1.0);
+  
+  [_waretoIcon.layer addAnimation:rotation forKey:@"transform.rotation.z"];
+
+}
+
+//-----------------------------------------------------------------------------------------------------------
+
+//This is the delegate method for a CAAnimation.
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
+{
+  _jellybeanButton.enabled = YES;
+}
+
+//-----------------------------------------------------------------------------------------------------------
+
 @end

@@ -18,6 +18,9 @@
                                 <state key="normal" title="Button" image="Jellybean">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleJellybeanButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ger-eb-WuA"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ife-2T-S74">
                                 <rect key="frame" x="107" y="491" width="51" height="31"/>
@@ -33,11 +36,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WareTo logo" id="nvP-kt-HuB">
+                                <rect key="frame" x="58" y="52" width="204" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="jellybeanButton" destination="JGI-JF-LJC" id="JQB-ST-RuB"/>
+                        <outlet property="waretoIcon" destination="nvP-kt-HuB" id="Jm2-5b-FBX"/>
                         <outlet property="wiggleSwitch" destination="ife-2T-S74" id="2UW-19-9kb"/>
                     </connections>
                 </viewController>
@@ -47,6 +55,7 @@
     </scenes>
     <resources>
         <image name="Jellybean" width="120" height="80"/>
+        <image name="WareTo logo" width="300" height="230"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
