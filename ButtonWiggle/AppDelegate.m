@@ -13,9 +13,36 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    return YES;
+  CAMediaTimingFunction *function =   [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+  float c0[2], c1[2], c2[2], c3[3];
+  
+  c0[0] = 1000;
+  c0[1] = 1000;
+  
+  c1[0] = 1000;
+  c1[1] = 1000;
+  
+  c2[0] = 1000;
+  c2[1] = 1000;
+  
+  c3[0] = 1000;
+  c3[1] = 1000;
+  
+  [function getControlPointAtIndex: 0 values: c0];
+  [function getControlPointAtIndex: 1 values: c1];
+  [function getControlPointAtIndex: 2 values: c2];
+  [function getControlPointAtIndex: 3 values: c3];
+  
+  NSLog(@"For kCAMediaTimingFunctionEaseInEaseOut timing function, c0 = (%.2f,%.2f)", c0[0], c0[1]);
+  NSLog(@"For kCAMediaTimingFunctionEaseInEaseOut timing function, c1 = (%.2f,%.2f)", c1[0], c1[1]);
+  NSLog(@"For kCAMediaTimingFunctionEaseInEaseOut timing function, c2 = (%.2f,%.2f)", c2[0], c2[1]);
+  NSLog(@"For kCAMediaTimingFunctionEaseInEaseOut timing function, c3 = (%.2f,%.2f)", c3[0], c3[1]);
+  
+  NSLog(@"Done");
+  return YES;
+
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
   // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

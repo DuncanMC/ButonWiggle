@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *jellybeanButton;
-@property (weak, nonatomic) IBOutlet UISwitch *wiggleSwitch;
-@property (weak, nonatomic) IBOutlet UIImageView *waretoIcon;
+@property (weak, nonatomic) IBOutlet UIButton     *jellybeanButton;
+@property (weak, nonatomic) IBOutlet UISwitch     *wiggleSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch     *randomSwitch;
+@property (weak, nonatomic) IBOutlet UIImageView  *waretoIcon;
 
 - (IBAction)handleWiggleSwitch:(UISwitch *)sender;
 - (IBAction)handleJellybeanButton:(UIButton *)sender;

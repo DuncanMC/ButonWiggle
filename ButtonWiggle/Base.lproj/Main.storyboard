@@ -10,7 +10,7 @@
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JGI-JF-LJC" userLabel="Jellybean button">
                                 <rect key="frame" x="100" y="355" width="120" height="80"/>
@@ -22,15 +22,26 @@
                                     <action selector="handleJellybeanButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ger-eb-WuA"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ife-2T-S74">
-                                <rect key="frame" x="107" y="491" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ife-2T-S74" userLabel="wiggleSwitch">
+                                <rect key="frame" x="57" y="505" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="handleWiggleSwitch:" destination="vXZ-lx-hvc" eventType="valueChanged" id="tgy-Uh-6qJ"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wiggle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Toq-wD-C7N">
-                                <rect key="frame" x="164" y="496" width="53" height="21"/>
+                                <rect key="frame" x="114" y="510" width="53" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Kmf-Q1-c3M" userLabel="randomSwitch">
+                                <rect key="frame" x="57" y="469" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use random motion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jrq-db-nfS">
+                                <rect key="frame" x="114" y="474" width="152" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -45,6 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="jellybeanButton" destination="JGI-JF-LJC" id="JQB-ST-RuB"/>
+                        <outlet property="randomSwitch" destination="Kmf-Q1-c3M" id="km6-go-JnG"/>
                         <outlet property="waretoIcon" destination="nvP-kt-HuB" id="Jm2-5b-FBX"/>
                         <outlet property="wiggleSwitch" destination="ife-2T-S74" id="2UW-19-9kb"/>
                     </connections>

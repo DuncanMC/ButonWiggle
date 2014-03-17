@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 
-#define randomize 0
 
 @interface ViewController ()
 
@@ -56,20 +55,22 @@
 {
   //Randomize the animation speed for each repeat
   CGFloat random = 0;
-#if randomize
-  random = [self randomFloat: .5];
-#endif
-  _jellybeanButton.layer.speed = 1 + random;
+  if (_randomSwitch.isOn)
+  {
+    random = [self randomFloat: .5];
+    _jellybeanButton.layer.speed = 1 + random;
+  }
   
   
   //randomize the duration of both steps slightly
   CGFloat duration;
-#if randomize
-  duration = .18;
-#else
-  duration = .4;
-#endif
-  duration += [self randomFloatPlusOrMinus: .02];
+  if (_randomSwitch.isOn)
+  {
+    duration = .18;
+    duration += [self randomFloatPlusOrMinus: .02];
+  }
+  else
+    duration = .4;
   
   [UIView animateWithDuration: duration
                         delay: 0
@@ -78,42 +79,42 @@
    {
      //Pick an amount to change the height & width of the iamge
      CGFloat delta = .1;
-#if randomize
-     delta= .05 + [self randomFloat: .05];
+     if (_randomSwitch.isOn)
+     {
+       delta= .05 + [self randomFloat: .05];
+     }
      if (arc4random_uniform(2) == 0)
        delta *= -1;
-#endif
-     
      //Create a transform that scales the image
      CGAffineTransform transform = CGAffineTransformMakeScale(1 + delta, 1 -delta); //Make the image wider and shorter or narrower and taller.
      
-     //-----
-#if randomize
-     //Rotate it by a random amount around a slightly randomized center-point
-     CGFloat x,y;
-     x = .5 + [self randomFloatPlusOrMinus: 20];
-     y = .5 + [self randomFloatPlusOrMinus: 20];
-     
-     CGFloat rotation;
-     rotation = [self randomFloatPlusOrMinus: .2];
-     
-     //To rotate around a random point,
-     //Shift the enter point, rotate, and shift the center point back
-     transform = CGAffineTransformTranslate(transform, x, y);
-     transform = CGAffineTransformRotate(transform, rotation * M_2_PI);
-     transform = CGAffineTransformTranslate(transform, -x, -y);
-#endif
-     //-----
+     if (_randomSwitch.isOn)
+     {
+       //Rotate it by a random amount around a slightly randomized center-point
+       CGFloat x,y;
+       x = .5 + [self randomFloatPlusOrMinus: 20];
+       y = .5 + [self randomFloatPlusOrMinus: 20];
+       
+       CGFloat rotation;
+       rotation = [self randomFloatPlusOrMinus: .2];
+       
+       //To rotate around a random point,
+       //Shift the enter point, rotate, and shift the center point back
+       transform = CGAffineTransformTranslate(transform, x, y);
+       transform = CGAffineTransformRotate(transform, rotation * M_2_PI);
+       transform = CGAffineTransformTranslate(transform, -x, -y);
+     }
      _jellybeanButton.transform = transform;
    }
                    completion: ^(BOOL finished)
    //When the animation is done, animate the view back to normal
    {
      CGFloat random = 0;
-#if randomize
-     random = [self randomFloat: .5];
-#endif
-     _jellybeanButton.layer.speed = 1 + random;
+     if (_randomSwitch.isOn)
+     {
+       random = [self randomFloat: .5];
+       _jellybeanButton.layer.speed = 1 + random;
+     }
      
      [UIView animateWithDuration: duration
                            delay: 0
