@@ -6,7 +6,19 @@ A project that makes a custom jellybean button wiggle like it's made of... jelly
 
 This project animates a custom button that uses a picture of a jellybean to make it look like it's wiggling like jelly.
 
-It randomly varies lots of parameters of the animation:
+It will either animate a slow, regular change of the horiziontal and vertical and horizontal scale of the button or randomize the motion, based on the setting of the "Use Random Motion" switch.
+
+Non-random animation looks like this:
+
+![jellybJellybean.gif](Jellybean.gif)
+
+
+And randomized animation looks like this:
+
+![Jellybean random wiggle.gif](Jellybean random wiggle.gif)
+
+
+If yo select random motion, it randomly varies lots of parameters of the animation:
 
 
 * animation speed

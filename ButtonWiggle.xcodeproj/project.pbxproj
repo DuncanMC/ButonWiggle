@@ -21,6 +21,9 @@
 		AE772D5E18D3614A0050A61E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE772D4018D3614A0050A61E /* UIKit.framework */; };
 		AE772D6618D3614A0050A61E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE772D6418D3614A0050A61E /* InfoPlist.strings */; };
 		AE772D6818D3614A0050A61E /* ButtonWiggleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE772D6718D3614A0050A61E /* ButtonWiggleTests.m */; };
+		AEFDEC5018D744C600511ABA /* Jellybean random wiggle.gif in Resources */ = {isa = PBXBuildFile; fileRef = AEFDEC4E18D744C600511ABA /* Jellybean random wiggle.gif */; };
+		AEFDEC5118D744C600511ABA /* Jellybean.gif in Resources */ = {isa = PBXBuildFile; fileRef = AEFDEC4F18D744C600511ABA /* Jellybean.gif */; };
+		AEFDEC5318D744CE00511ABA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AEFDEC5218D744CE00511ABA /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		AE772D6318D3614A0050A61E /* ButtonWiggleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ButtonWiggleTests-Info.plist"; sourceTree = "<group>"; };
 		AE772D6518D3614A0050A61E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE772D6718D3614A0050A61E /* ButtonWiggleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonWiggleTests.m; sourceTree = "<group>"; };
+		AEFDEC4E18D744C600511ABA /* Jellybean random wiggle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Jellybean random wiggle.gif"; sourceTree = SOURCE_ROOT; };
+		AEFDEC4F18D744C600511ABA /* Jellybean.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Jellybean.gif; sourceTree = SOURCE_ROOT; };
+		AEFDEC5218D744CE00511ABA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 		AE772D4318D3614A0050A61E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AEFDEC4D18D744B900511ABA /* Documentation */,
 				AE772D4418D3614A0050A61E /* ButtonWiggle-Info.plist */,
 				AE772D4518D3614A0050A61E /* InfoPlist.strings */,
 				AE772D4818D3614A0050A61E /* main.m */,
@@ -150,6 +157,16 @@
 				AE772D6418D3614A0050A61E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEFDEC4D18D744B900511ABA /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				AEFDEC5218D744CE00511ABA /* README.md */,
+				AEFDEC4E18D744C600511ABA /* Jellybean random wiggle.gif */,
+				AEFDEC4F18D744C600511ABA /* Jellybean.gif */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +245,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFDEC5318D744CE00511ABA /* README.md in Resources */,
 				AE772D5518D3614A0050A61E /* Images.xcassets in Resources */,
+				AEFDEC5018D744C600511ABA /* Jellybean random wiggle.gif in Resources */,
 				AE772D4718D3614A0050A61E /* InfoPlist.strings in Resources */,
 				AE772D5018D3614A0050A61E /* Main.storyboard in Resources */,
+				AEFDEC5118D744C600511ABA /* Jellybean.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +476,7 @@
 				AE772D6D18D3614A0050A61E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE772D6E18D3614A0050A61E /* Build configuration list for PBXNativeTarget "ButtonWiggleTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +485,7 @@
 				AE772D7018D3614A0050A61E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
