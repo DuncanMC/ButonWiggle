@@ -66,17 +66,20 @@
   
   //randomize the duration of both steps slightly
   CGFloat duration;
+  UIViewAnimationOptions options = UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState;
   if (_randomSwitch.isOn)
   {
-    duration = .18;
+    duration = .3;
     duration += [self randomFloatPlusOrMinus: .02];
+    options |= UIViewAnimationOptionCurveLinear;
   }
   else
     duration = .4;
   
+  
   [UIView animateWithDuration: duration
                         delay: 0
-                      options:  UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
+                      options:  options
                    animations: ^
    {
      //Pick an amount to change the height & width of the iamge
@@ -117,10 +120,10 @@
        random = [self randomFloat: .5];
        _jellybeanButton.layer.speed = 1 + random;
      }
-     
+     //UIViewAnimationOptionCurveEaseInOut
      [UIView animateWithDuration: duration
                            delay: 0
-                         options:  UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
+                         options:  options
                       animations: ^
       {
         //Set the view's trnaform back to the identity transform.
