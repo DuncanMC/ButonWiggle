@@ -60,6 +60,8 @@
     random = [self randomFloat: .5];
     _jellybeanButton.layer.speed = 1 + random;
   }
+  else
+    _jellybeanButton.layer.speed = 1 ;
   
   
   //randomize the duration of both steps slightly
@@ -82,9 +84,9 @@
      if (_randomSwitch.isOn)
      {
        delta= .05 + [self randomFloat: .05];
+       if (arc4random_uniform(2) == 0)
+         delta *= -1;
      }
-     if (arc4random_uniform(2) == 0)
-       delta *= -1;
      //Create a transform that scales the image
      CGAffineTransform transform = CGAffineTransformMakeScale(1 + delta, 1 -delta); //Make the image wider and shorter or narrower and taller.
      
