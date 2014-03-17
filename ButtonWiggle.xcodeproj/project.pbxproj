@@ -21,9 +21,6 @@
 		AE772D5E18D3614A0050A61E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE772D4018D3614A0050A61E /* UIKit.framework */; };
 		AE772D6618D3614A0050A61E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE772D6418D3614A0050A61E /* InfoPlist.strings */; };
 		AE772D6818D3614A0050A61E /* ButtonWiggleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE772D6718D3614A0050A61E /* ButtonWiggleTests.m */; };
-		AEFDEC5018D744C600511ABA /* Jellybean random wiggle.gif in Resources */ = {isa = PBXBuildFile; fileRef = AEFDEC4E18D744C600511ABA /* Jellybean random wiggle.gif */; };
-		AEFDEC5118D744C600511ABA /* Jellybean.gif in Resources */ = {isa = PBXBuildFile; fileRef = AEFDEC4F18D744C600511ABA /* Jellybean.gif */; };
-		AEFDEC5318D744CE00511ABA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AEFDEC5218D744CE00511ABA /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -245,12 +242,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEFDEC5318D744CE00511ABA /* README.md in Resources */,
 				AE772D5518D3614A0050A61E /* Images.xcassets in Resources */,
-				AEFDEC5018D744C600511ABA /* Jellybean random wiggle.gif in Resources */,
 				AE772D4718D3614A0050A61E /* InfoPlist.strings in Resources */,
 				AE772D5018D3614A0050A61E /* Main.storyboard in Resources */,
-				AEFDEC5118D744C600511ABA /* Jellybean.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
